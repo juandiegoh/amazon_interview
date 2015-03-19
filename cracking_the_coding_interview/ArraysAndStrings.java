@@ -82,7 +82,7 @@ public class ArraysAndStrings {
             return true;
         }
 
-        return this.compareArrays(bubbleSort(s1), bubbleSort(s2));
+        return compareArrays(bubbleSort(s1), bubbleSort(s2));
     }
 
     private char[] bubbleSort(char[] s) {
@@ -105,7 +105,20 @@ public class ArraysAndStrings {
     }
 
 
-    public boolean compareArrays(char[] a1, char[] a2) {
+    public static boolean compareArrays(char[] a1, char[] a2) {
+        if (a1.length != a2.length) {
+            return false;
+        }
+
+        for (int i = 0; i < a1.length; i++) {
+            if (a1[i] != a2[i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static boolean compareIntArrays(int[] a1, int[] a2) {
         if (a1.length != a2.length) {
             return false;
         }
